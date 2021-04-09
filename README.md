@@ -4,6 +4,8 @@
 
 This app allows travellers to plan ahead their travel and see a list of top sightseeing places in any city in the world. It gives information that includes name, description and image of exact place. Users are able to save places they would want to visit.
 
+API to use: https://api.sygictravelapi.com/
+
 ## Wireframes:
 
 
