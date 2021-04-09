@@ -7,8 +7,15 @@ This app allows travellers to plan ahead their travel and see a list of top sigh
 API to use: https://api.sygictravelapi.com/
 
 ## Wireframes:
+![erb](assets/erb.png)
 
+![erb](assets/1_login.png)
 
+![erb](assets/1_signup.png)
+
+![erb](assets/2_search.png)
+
+![erb](assets/3_results.png)
 
 ## User stories:
 
