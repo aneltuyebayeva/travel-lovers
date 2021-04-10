@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <div class="allContent">
+    <nav class="nav-links hidden"> 
+    <span id="profile-link" class="nav-link">My profile</span>
+    <span id="logout-link" class="nav-link">Logout</span>
+    </nav>
+    <div class="allContent hidden">
         <div class="signUpScreen">
-            <h1>Sign Up</h1>
            <form class="signup-form">
                <label for="signup-name">Name</label>
                <input type="text" id="signup-name">
@@ -21,13 +25,13 @@
                <label for="signup-password">Password</label>
                <input type="password" id="signup-password">
          
-               <input type="submit" value="Sign Up!">
+               <input type="submit" value="Sign Up!" id="signUp">
            </form>
            <button class="loginButton">Login</button>
          </div>
     </div>
-    <div class="loginScreen hidden">
-        <h1>Login</h1>
+    <div class="loginContent hidden">
+    <div class="loginScreen">
         <form class="login-form">
             <label for="login-email">Email</label>
             <input type="text" id="login-email">
@@ -35,10 +39,23 @@
             <label for="login-password">Password</label>
             <input type="password" id="login-password">
       
-            <input type="submit" value="Log In!">
+            <input type="submit" value="Log In!" id="login">
           </form>
           <button class="signUpButton">SignUp</button>
     </div>
+</div>
+<div class="profileContent hidden">
+    <div class="profileScreen hidden">
+        <div class="nav">
+            <h1 class="userName">Welcome username</h1>
+        </div>
+        <div class="searchContainer">
+            <form class="search-form">
+                <input type="text" id="city-search" placeholder="Where are you going?">
+                <input type="submit" value="Search" id="search">
+              </form>
+    </div>
+</div>
     <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js "></script>
     <script async defer src="./main.js"></script>    
 </body>

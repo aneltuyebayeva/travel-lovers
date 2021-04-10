@@ -1,5 +1,16 @@
 const signUpForm = document.querySelector('.signup-form');
 const loginForm = document.querySelector('.login-form');
+const profile = document.querySelector('.profileScreen');
+const signUpScreen = document.querySelector('.signUpScreen');
+const loginScreen = document.querySelector('.loginScreen');
+const navLinks = document.querySelector('.nav-links');
+
+const switchToLogin = () => {
+    profile.classList.add('hidden')
+    signUpScreen.classList.remove('hidden')
+    loginScreen.classList.add('hidden')
+    navLinks.classList.add('hidden')
+}
 
 signUpForm.addEventListener('submit', async(e) => {
     e.preventDefault()
