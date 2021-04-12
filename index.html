@@ -13,8 +13,11 @@
     <span id="profile-link" class="nav-link">My profile</span>
     <span id="logout-link" class="nav-link">Logout</span>
     </nav>
-    <div class="allContent hidden">
+    <div class="allContent">
+        
         <div class="signUpScreen">
+            <h1>Plan a trip </h1>
+
            <form class="signup-form">
                <label for="signup-name">Name</label>
                <input type="text" id="signup-name">
@@ -30,8 +33,8 @@
            <button class="loginButton">Login</button>
          </div>
     </div>
-    <div class="loginContent hidden">
-    <div class="loginScreen">
+    
+    <div class="loginScreen hidden">
         <form class="login-form">
             <label for="login-email">Email</label>
             <input type="text" id="login-email">
@@ -43,8 +46,8 @@
           </form>
           <button class="signUpButton">SignUp</button>
     </div>
-</div>
-<div class="profileContent hidden">
+
+
     <div class="profileScreen hidden">
         <div class="nav">
             <h1 class="userName">Welcome username</h1>
@@ -55,7 +58,17 @@
                 <input type="submit" value="Search" id="search">
               </form>
     </div>
-</div>
+    <div class = "showCityName hidden">
+        <h2 class="show-city-name">MIAMI</h2>
+    </div>
+    <div class="searchResults hidden">
+        <div class="show-results">
+        <h2 class="show-name"></h2>
+        <img id = "show-image" src=" ">
+        <p class="show-description"></p>
+        </div>
+    </div>
+
     <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js "></script>
     <script async defer src="./main.js"></script>    
 </body>

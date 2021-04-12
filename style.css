@@ -1,9 +1,7 @@
-.hidden {
-    display: none;
-}
-
 body {
-    background: url('/assets/bg3.jpeg');
+    margin: 0; 
+    padding: 0;
+    background: url("https://i.imgur.com/hfxUkFL.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -14,6 +12,7 @@ body {
     align-items: center;
     font-family: 'Rajdhani', sans-serif;
     margin-top: 140px;
+    
 }
 
 .signup-form, .login-form {
@@ -23,12 +22,13 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 300px;
+    margin-top: 30px;
+    height: 240px;
     width: 500px;
     padding: 20px;
     font-family: 'Rajdhani', sans-serif;
     font-size: 20px;
-    background-color: rgba(250, 235, 215, 0.658);
+    background-color: rgba(255, 255, 255, 0.575);
 }
 
 #signup-name {
@@ -55,12 +55,13 @@ body {
 .loginButton {
     border: 1px solid white;
     border-radius: 20px;
-    margin-top: -49px;
+    margin-top: -41px;
     margin-left: 120px;
     width: 100px;
     height: 30px;
     font-family: 'Rajdhani', sans-serif;
     font-size: 15px;
+    background-color:rgba(252, 169, 62, 0.658);
 
 }
 
@@ -70,9 +71,10 @@ body {
     margin-left: -120px;
     width: 100px;
     height: 30px;
-    margin-bottom: -14px;
+    margin-bottom: -15px;
     font-family: 'Rajdhani', sans-serif;
     font-size: 15px;
+    background-color:rgba(252, 169, 62, 0.658)
 }
 
 #login {
@@ -84,31 +86,29 @@ body {
     margin-bottom: -14px;
     font-family: 'Rajdhani', sans-serif;
     font-size: 15px; 
+    background-color:rgba(252, 169, 62, 0.658)
 }
 
 .signUpButton {
     border: 1px solid white;
     border-radius: 20px;
-    margin-top: -64px;
+    margin-top: -53px;
     margin-left: 120px;
     width: 100px;
     height: 30px;
     font-family: 'Rajdhani', sans-serif;
     font-size: 15px;
+    background-color:rgba(252, 169, 62, 0.658);
+    
 }
 
 .profileScreen {
-    border: 1px solid white;
-    border-radius: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Rajdhani', sans-serif;
-    margin-top: 140px;
-    height: 200px;
-    width: 600px;
-    background-color: rgba(250, 235, 215, 0.658);
+    margin-top: 20px;
 }
 
 #city-search {
@@ -117,6 +117,8 @@ body {
     width: 400px;
     height: 30px;
     font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.575);
 }
 
 #search {
@@ -127,6 +129,8 @@ body {
     margin-bottom: -14px;
     font-family: 'Rajdhani', sans-serif;
     font-size: 15px;
+    color: white;
+    background-color:rgba(65, 100, 55, 0.815);
 }
 
 .nav-links {
@@ -139,5 +143,17 @@ body {
 .nav-link {
     padding: 15px;
 }
+
+.hidden {
+    display: none;
+}
+
+.searchResults {
+    border: 1px solid black;
+    height: 200px;
+    width: 100px;
+    margin-top: 100px;
+}
+
 
 
