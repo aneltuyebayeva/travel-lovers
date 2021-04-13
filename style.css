@@ -11,7 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Rajdhani', sans-serif;
-    margin-top: 140px;
+    margin-top: 80px;
     
 }
 
@@ -121,7 +121,7 @@ body {
     background-color: rgba(255, 255, 255, 0.575);
 }
 
-#search {
+#search, .saveSearch {
     border: 1px solid white;
     border-radius: 20px;
     width: 100px;
@@ -149,15 +149,20 @@ body {
 }
 
 .searchResults {
-    border: 1px solid black;
-    height: 400px;
-    width: 230px;
+    max-width: 800px;
+    border: 1px solid white; 
     margin-top: 40px;
     background-color: rgba(255, 255, 255, 0.575);
+    padding: 5px;
 }
 
 .show-results {
     text-align: center;
+}
+
+.showCityName {
+    text-align: left;
+   
 }
 
 
