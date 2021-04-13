@@ -90,7 +90,7 @@ const searchForm = document.querySelector('.search-form')
      let searchBar = document.querySelector('#city-search').value
       console.log(searchBar)
       const response = await axios.post('http://localhost:3001/city/search', {
-          city: searchBar
+          city: searchBar.charAt(0).toUpperCase()+searchBar.slice(1)
       })
       console.log(response.data)
       showResults(response.data)
@@ -108,12 +108,18 @@ const showResults = (data) => {
     let showCity = document.querySelector('.showCityName')
     showCity.classList.remove('hidden')
 
-    let searchBar = document.querySelector('#city-search').value
-    let showCityName = document.querySelector('show-city-name')
-    showCityName.innerText = searchBar
+    let showCityName = document.querySelector('.show-city-name')
+    showCityName.innerText = data.results[0].location_id
 
     let showName = document.querySelector('.show-name')
     showName.innerText = data.results[0].name
+
+    let showImage = document.querySelector('#show-image')
+    showImage.src = data.results[0].images[0].sizes.thumbnail.url
+  
+
+    let showDescription = document.querySelector('.show-description')
+    showDescription.innerText = data.results[0].snippet
 }
 
 const loginButton = document.querySelector('.loginButton')
