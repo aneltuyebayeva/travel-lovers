@@ -120,7 +120,6 @@ let searchLocation = ''
           showResults(placeName, placeImage, placeDescription)
       }
      
-
     let showCityName = document.querySelector('.show-city-name')
     showCityName.innerText = response.data.results[0].location_id
     searchLocation = response.data.results[0].location_id
@@ -204,7 +203,12 @@ myProfile.addEventListener('click', () => {
 
 const home = document.querySelector('#home-link')
 home.addEventListener('click', () => {
-    switchToProfile()
+ 
+   
+    profile.classList.remove('hidden')
+    signUpScreen.classList.add('hidden')
+    loginScreen.classList.add('hidden')
+    navLinks.classList.remove('hidden')
 })
 
 const deleteButton = document.querySelector('.deleteSearch')
