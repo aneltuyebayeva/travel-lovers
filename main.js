@@ -6,12 +6,28 @@ const signUpScreen = document.querySelector('.signUpScreen');
 const loginScreen = document.querySelector('.loginScreen');
 const navLinks = document.querySelector('.nav-links');
 const searchResults = document.querySelector('.searchResults')
+const searchForm = document.querySelector('.search-form')
 
 const switchToProfile = () => {
     profile.classList.remove('hidden')
     signUpScreen.classList.add('hidden')
     loginScreen.classList.add('hidden')
     navLinks.classList.remove('hidden')
+    let userName = document.querySelector('.userName')
+    let usersName = localStorage.getItem('userName')
+    if(usersName !== undefined) {
+        userName.innerText = `Welcome ${usersName}`
+    }
+}
+
+const switchToMyProfile = () => {
+    profile.classList.remove('hidden')
+    signUpScreen.classList.add('hidden')
+    loginScreen.classList.add('hidden')
+    searchForm.classList.add('hidden')
+    navLinks.classList.remove('hidden')
+    document.querySelector('.saveSearch').classList.add('hidden')
+    document.querySelector('.deleteSearch').classList.remove('hidden')
     let userName = document.querySelector('.userName')
     let usersName = localStorage.getItem('userName')
     if(usersName !== undefined) {
@@ -73,7 +89,7 @@ loginForm.addEventListener('submit', async(e) => {
             password: password
         })
         const userId = response.data.id
-        console.log(response.data)
+        // console.log(response.data)
         const userName = response.data.name
         localStorage.setItem('userId', userId) 
         localStorage.setItem('userName', userName) 
@@ -84,7 +100,7 @@ loginForm.addEventListener('submit', async(e) => {
     }
 })
 let searchLocation = ''
-const searchForm = document.querySelector('.search-form')
+// const searchForm = document.querySelector('.search-form')
   searchForm.addEventListener('submit', async(e) => {
     e.preventDefault()
     try {
@@ -97,7 +113,7 @@ const searchForm = document.querySelector('.search-form')
       searchResults.innerHTML = ''
            for (let place of response.data.results) {
           let placeName = place.name
-          let placeImage = place.images[0].sizes.thumbnail.url
+          let placeImage = place.images[0].sizes.medium.url
           let placeDescription = place.snippet
           
           
@@ -114,9 +130,8 @@ const searchForm = document.querySelector('.search-form')
     }
   })
 
-    // resultsId = null
+  
 const showResults = (name, image, description) => {
-    // resultsId = data.results[0].location_id
     
     searchResults.classList.remove('hidden')
     let showCity = document.querySelector('.showCityName')
@@ -172,4 +187,28 @@ saveSearch.addEventListener('click', async (e) => {
     } catch (error) {
         console.log(res)
     }
+})
+
+
+let deleteSingle = async (searchLocation) => {
+    let userId = localStorage.getItem('userId')
+    let res = await axios.delete(`http://localhost:3001/user/${userId}/delete/${searchLocation}`)
+    console.log(res)
+    switchToProfile()
+}
+
+const myProfile = document.querySelector('#profile-link')
+myProfile.addEventListener('click', () => {
+    switchToMyProfile()
+})
+
+const home = document.querySelector('#home-link')
+home.addEventListener('click', () => {
+    switchToProfile()
+})
+
+const deleteButton = document.querySelector('.deleteSearch')
+deleteButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    deleteSingle(searchLocation)
 })
