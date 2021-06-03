@@ -16,7 +16,7 @@ app.get('/main.js', async (req, res) => {
   await replaceInFile ({
     files: filepath,
     from: 'http://localhost:3001',
-    to: 'https://travel-lovers-app.herokuapp.com'
+    to: 'https://travel-lovers-app.herokuapp.com/'
   })
 }
   res.sendFile(filepath)
